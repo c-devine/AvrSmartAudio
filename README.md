@@ -5,6 +5,16 @@ Controller software used to control a Smart Audio enabled VTX with the existing 
 ## Architecture
 
 
+## Video
+4 Axis CNC Cutter in action:
+
+[![Demo](https://raw.githubusercontent.com/c-devine/AvrSmartAudio/snapshots/assets/img/youtube-prototype.png?raw=true)](https://www.youtube.com/watch?v=tcKi-m7yl1k "Adafruit Trinket Smart Audio Prototype on Breadboard")
+
+
+# To Do
+* Clean up code
+* Add auto-bauding
+
 ## Snapshots
 
 
