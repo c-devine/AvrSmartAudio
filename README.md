@@ -27,8 +27,8 @@ Smart Audio in action:
 * Uses a hacked version of "SoftwareSerial".  Updated start/stop, intra-bit delays, and timings that worked on the SAMD21. Also changed the RX read strategy to use a Timer and timed pin reads, instead of dealys - and removed the shared receive buffer.  The SAMDHDUart should only listen to one RX at a time.
 
 
-## Installing
-* Use build in "Upload Sketch" tool in Sloeber IDE, or possibly use the Arduino IDE (but the code setup probably needs to be re-arranged. 
+## Building and Installing
+* Clone and build in eclipse. Use the "Upload Sketch" tool in Sloeber IDE, or possibly use the Arduino IDE (but the code setup probably needs to be re-arranged.) 
 
 ## Built With
 
@@ -54,5 +54,5 @@ This project is licensed under the GNU General Public License v3.0 - see the [LI
 ## Acknowledgments
 
 * [betaflight](https://github.com/betaflight/betaflight) - Open Source Flight Controller Firmware.
-* [Adafruit Dot Start Library](https://github.com/adafruit/Adafruit_DotStar) - Library used to control the on board led.
+* [Adafruit Dot Star Library](https://github.com/adafruit/Adafruit_DotStar) - Library used to control the on board led.
 * [Circular Buffer](https://github.com/rlogiacco/CircularBuffer) - Circular Buffer code.
