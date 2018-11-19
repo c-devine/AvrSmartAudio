@@ -1,10 +1,3 @@
-/*
- * Vtx.cpp
- *
- *  Created on: Oct 23, 2018
- *      Author: Chris
- */
-
 #include "Vtx.h"
 #include "VtxLookup.h"
 

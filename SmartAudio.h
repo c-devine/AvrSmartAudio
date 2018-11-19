@@ -1,10 +1,3 @@
-/*
- * SmartAudio.h
- *
- *  Created on: Oct 24, 2018
- *      Author: Chris
- */
-
 #ifndef SMARTAUDIO_H_
 #define SMARTAUDIO_H_
 

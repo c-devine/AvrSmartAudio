@@ -1,10 +1,3 @@
-/*
- SmartAudio.cpp
-
- Created on: Oct 24, 2018
- Author: Chris
- */
-
 #include "SmartAudio.h"
 
 //

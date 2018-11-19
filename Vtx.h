@@ -1,10 +1,3 @@
-/*
- * Vtx.h
- *
- *  Created on: Oct 23, 2018
- *      Author: Chris
- */
-
 #ifndef VTX_H_
 #define VTX_H_
 
