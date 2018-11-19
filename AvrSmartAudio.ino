@@ -26,7 +26,7 @@ void toggleLed() {
 
 void setup() {
 
-	Serial.begin(SERIAL_BAUD); // @suppress("Ambiguous problem")
+	Serial.begin(SERIAL_BAUD);
 	dot.begin();
 	pinMode(LED_PIN, OUTPUT);
 	digitalWrite(LED_PIN, HIGH);
