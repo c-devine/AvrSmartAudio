@@ -2,7 +2,9 @@
 
 Controller software used to control a Smart Audio enabled VTX with the existing betaflight OpenTX lua scripts. The [Adafruit Trinket M0](https://www.adafruit.com/product/3500) is a small SAMD21 based development board with USB (easy programming), multiple GPIO pins, and a couple of leds. Tested soley with a Mach2 VTX.
 
-## Architecture
+## Overview
+
+<img src="https://raw.githubusercontent.com/c-devine/AvrSmartAudio/snapshots/assets/img/overview.png?raw=true">
 
 
 ## Video
