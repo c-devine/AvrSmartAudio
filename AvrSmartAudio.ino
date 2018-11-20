@@ -1,7 +1,6 @@
 #include <Adafruit_DotStar.h>
 #include <avdweb_SAMDtimer.h>
 #include "Arduino.h"
-#include "Adafruit_DotStar.h"
 #include "FrskySPort.h"
 #include "Vtx.h"
 #include "SmartAudio.h"
