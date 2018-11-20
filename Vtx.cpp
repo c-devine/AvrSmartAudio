@@ -97,14 +97,14 @@ mspFrame_t* Vtx::filterMspFrame() {
 
 }
 
-// 0xAA 0x55 0x01 (Version/Command) 0x06 (Length) 0x00 (Channel) 0x00 (Power Level) 0x01(Operation
-// Mode) 0x16 0xE9(Current Frequency 5865) 0x4D(CRC8)
 void Vtx::handleSAResponse() {
 
 	switch (_lastCommand) {
 
 	case MSP_VTX_READ: {
 
+		// 0xAA 0x55 0x01 (Version/Command) 0x06 (Length) 0x00 (Channel) 0x00 (Power Level) 0x01(Operation
+		// Mode) 0x16 0xE9(Current Frequency 5865) 0x4D(CRC8)
 		uint8_t *buffer = _sa.getBuffer();
 		//_sa.printBuffer(buffer, buffer[1] + 2, "handleSAResponse MSP_VTX_READ");
 
