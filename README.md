@@ -13,10 +13,11 @@ Smart Audio in action:
 [![Demo](https://raw.githubusercontent.com/c-devine/AvrSmartAudio/snapshots/assets/img/youtube-prototype.png?raw=true)](https://www.youtube.com/watch?v=tcKi-m7yl1k "Adafruit Trinket Smart Audio Prototype on Breadboard")
 
 
-# To Do
+## To Do
 * Clean up code
 * Add auto-bauding
 * Make buildable in Arduino IDE
+* Update leds based on status (connected, disconnected, etc).
 
 ## Snapshots
 
