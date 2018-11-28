@@ -38,7 +38,6 @@ void loop() {
 	static uint32_t dotCounter = millis();
 
 	if (millis() - millisCounter > 1000) {
-
 		// solid led if there is a gps fix, otherwise flash
 		if (!gpsFix) {
 			led.toggle();

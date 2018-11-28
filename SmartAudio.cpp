@@ -6,6 +6,7 @@
 
 #define POLYGEN 0xd5
 uint8_t CRC8(const uint8_t *data, const int8_t len) {
+
 	uint8_t crc = 0; /* start with 0 so first byte can be 'xored' in */
 	uint8_t currByte;
 
@@ -42,6 +43,7 @@ SmartAudio::~SmartAudio() {
 }
 
 void SmartAudio::setup() {
+
 	_ss.begin();
 }
 
@@ -50,7 +52,6 @@ void SmartAudio::getSettings() {
 	static uint8_t buf[6] = { 0xAA, 0x55, 0x03, 0x00, 0x9F, 0x00 };
 
 	sendFrame(buf, 6);
-
 }
 
 void SmartAudio::writeChannel(saWriteSettings_t settings) {
@@ -87,7 +88,6 @@ void SmartAudio::writePitMode(saWriteSettings_t settings) {
 	//{0xAA 0x55 0x0B(Command 5) 0x01(Length) 0x01(IN RANGE PIT FLAG) 0xXX(CRC8)}
 	//printBuffer(buf, 7, "sending writPitMode to sa device");
 	sendFrame(buf, 7);
-
 }
 
 void SmartAudio::sendFrame(uint8_t *sendBuffer, uint8_t size) {
@@ -151,6 +151,7 @@ bool SmartAudio::processSmartAudio(uint32_t delayMs) {
 }
 
 void SmartAudio::printBuffer(uint8_t *buffer, uint8_t size, const char* msg) {
+
 	Serial.print(msg);
 	Serial.println("--------");
 	for (uint8_t i = 0; i < size; i++) {
@@ -161,6 +162,7 @@ void SmartAudio::printBuffer(uint8_t *buffer, uint8_t size, const char* msg) {
 }
 
 uint8_t * SmartAudio::getBuffer() {
+
 	return _buffer[!_rxBuffer];
 }
 

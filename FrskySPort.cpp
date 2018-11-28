@@ -10,7 +10,6 @@ FrskySPort::FrskySPort(uint8_t rxtx) :
 	_spState = SP_IDLE;
 	memset(_buffer[0], 0, SP_RX_BUFFER_LEN);
 	memset(_buffer[1], 0, SP_RX_BUFFER_LEN);
-
 }
 
 FrskySPort::~FrskySPort() {
@@ -124,7 +123,6 @@ void FrskySPort::sendData(uint8_t sensorId, uint8_t frameId, uint16_t dataId,
 			lastRx = data;
 		}
 	}
-
 }
 
 void FrskySPort::sendByte(uint8_t byte) {
@@ -138,7 +136,6 @@ void FrskySPort::sendByte(uint8_t byte) {
 	_crc &= 0x00ff;
 	_crc += _crc >> 8; //0-0FF
 	_crc &= 0x00ff;
-
 }
 
 
@@ -148,7 +145,6 @@ void FrskySPort::sendCrc() {
 	_ss.write(0xFF - _crc);
 	// CRC reset
 	_crc = 0;
-
 }
 
 void FrskySPort::sendPayload(uint8_t frameId, uint16_t dataId,
@@ -187,5 +183,4 @@ void FrskySPort::sendLatLon(geodata_t* geoData) {
 
 	sendData(SENSOR_ID_GPS, FRSKY_FRAME_ID, DATA_ID_GPS_LONLAT, gpsLon);
 	sendData(SENSOR_ID_GPS, FRSKY_FRAME_ID, DATA_ID_GPS_LONLAT, gpsLat);
-
 }

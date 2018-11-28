@@ -19,7 +19,6 @@ void printMspFrame(mspFrame_t* frame, const char* msg) {
 		Serial.print(frame->data[i], HEX);
 	}
 	Serial.println();
-
 }
 
 Vtx::Vtx(FrskySPort &frsport, SmartAudio &sa) :
@@ -28,7 +27,6 @@ Vtx::Vtx(FrskySPort &frsport, SmartAudio &sa) :
 	_vtxState = VTX_IDLE;
 	_lastCommand = 0;
 	_lastMSPSeq = 0;
-
 }
 
 Vtx::~Vtx() {
@@ -42,6 +40,7 @@ void Vtx::setup() {
 }
 
 void Vtx::loop() {
+
 	static uint32_t mc = millis();
 
 	switch (_vtxState) {
@@ -74,7 +73,6 @@ void Vtx::loop() {
 		}
 		return;
 	}
-
 }
 
 /**
@@ -94,7 +92,6 @@ mspFrame_t* Vtx::filterMspFrame() {
 	//printMspFrame(mspFrame, "filter frame");
 
 	return mspFrame;
-
 }
 
 void Vtx::handleSAResponse() {
@@ -172,9 +169,7 @@ void Vtx::handleSAResponse() {
 				payload);
 
 		return;
-
 	}
-
 }
 
 void Vtx::handleMSP() {
@@ -210,8 +205,6 @@ void Vtx::handleMSP() {
 	}
 
 	delete mspFrame;
-
-	return;
 }
 
 uint8_t Vtx::getCommand(mspFrame_t* mspFrame) {

@@ -1,7 +1,6 @@
 #ifndef AVRSMARTAUDIO_H_
 #define AVRSMARTAUDIO_H_
 
-
 typedef struct {
 	float latitude;
 	float longitude;

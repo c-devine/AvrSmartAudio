@@ -4,7 +4,6 @@ Gps::Gps(Uart &serial, boolean echo) :
 		_serial(serial) {
 
 	_echo = echo;
-
 }
 
 Gps::~Gps() {
@@ -15,7 +14,6 @@ void Gps::setup() {
 
 	_serial.begin(GPS_BAUD);
 	enable(true);
-
 }
 
 void Gps::enable(boolean enabled) {
@@ -78,7 +76,6 @@ void Gps::processGGA(char *buffer) {
 	_geodata.numSats = strlen(tmp) ? atoi(tmp) : 0;
 	strtok(NULL, ",");
 	_geodata.altitude = atof(strtok(NULL, ","));
-
 }
 
 void Gps::processRMC(char *buffer) {

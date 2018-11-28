@@ -40,7 +40,6 @@ private:
 	geodata_t _geodata = {0,0,0,0,0,0,0};
 	boolean _dataReady = false;
 	boolean _enabled = false;
-
 };
 
 #endif /* GPS_H_ */

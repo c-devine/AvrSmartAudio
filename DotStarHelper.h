@@ -1,10 +1,3 @@
-/*
- * DotStartHelper.h
- *
- *  Created on: Nov 17, 2018
- *      Author: Chris
- */
-
 #ifndef DOTSTARHELPER_H_
 #define DOTSTARHELPER_H_
 
