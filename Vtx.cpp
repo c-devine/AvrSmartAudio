@@ -134,7 +134,7 @@ void Vtx::handleSAResponse() {
 		crc = MSP_VTX_READ ^ messageSize ^ bytes[0] ^ bytes[1] ^ bytes[2]
 				^ bytes[3];
 
-		_frsport.sendData(MSP_RESPONSE_SENSOR_ID, header, payload);
+		_frsport.sendData(MSP_RESPONSE_SENSOR_ID, RESPONSE_FRAME_ID, header, payload);
 
 		uint8_t pitMode =
 				_saDevice.mode
@@ -147,7 +147,7 @@ void Vtx::handleSAResponse() {
 		bytes[2] = crc ^ pitMode ^ bytes[0] ^ bytes[1];
 		bytes[3] = 0;
 
-		_frsport.sendData(MSP_RESPONSE_SENSOR_ID, header, payload);
+		_frsport.sendData(MSP_RESPONSE_SENSOR_ID, RESPONSE_FRAME_ID, header, payload);
 		return;
 	}
 	case MSP_VTX_WRITE:
@@ -162,12 +162,14 @@ void Vtx::handleSAResponse() {
 		uint8_t *bytes = (uint8_t*) &payload;
 		bytes[0] = MSP_VTX_WRITE;
 
-		_frsport.sendData(MSP_RESPONSE_SENSOR_ID, header, payload);
+		_frsport.sendData(MSP_RESPONSE_SENSOR_ID, RESPONSE_FRAME_ID, header,
+				payload);
 
 		header = (++_lastMSPSeq & 0xF) | MSP_START_FLAG | (0 << 8);
 		bytes[0] = MSP_EEPROM_WRITE;
 
-		_frsport.sendData(MSP_RESPONSE_SENSOR_ID, header, payload);
+		_frsport.sendData(MSP_RESPONSE_SENSOR_ID, RESPONSE_FRAME_ID, header,
+				payload);
 
 		return;
 

@@ -30,7 +30,7 @@ Uses a hacked version of "SoftwareSerial".  Updated start/stop, intra-bit delays
 
 
 ## Prerequisites
-* [Avdweb_SAMDtimer](http://www.avdweb.nl/arduino/libraries/samd21-timer.html) - SAMD21 Timer library - requires two other specific libraries (see readme in the above link):  Adafruit\_ASFcore and Adafruit_ZeroTimer
+* [Avdweb_SAMDtimer](http://www.avdweb.nl/arduino/libraries/samd21-timer.html) - SAMD21 Timer library - requires two other specific libraries (see readme in the referenced link):  Adafruit\_ASFcore and Adafruit_ZeroTimer
 * [Adafruit Dot Star Library](https://github.com/adafruit/Adafruit_DotStar) - Library used to control the on-board led.
 
 

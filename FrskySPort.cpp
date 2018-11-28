@@ -97,10 +97,12 @@ mspFrame_t* FrskySPort::checkMSP() {
 }
 
 mspFrame_t* FrskySPort::getBuffer() {
+
 	return (mspFrame_t*) _buffer[!_readBuffer];
 }
 
-void FrskySPort::sendData(uint8_t sensorId, uint16_t dataId, uint32_t payload) {
+void FrskySPort::sendData(uint8_t sensorId, uint8_t frameId, uint16_t dataId,
+		uint32_t payload) {
 
 	uint8_t data = 0;
 	uint8_t lastRx = 0;
@@ -116,7 +118,7 @@ void FrskySPort::sendData(uint8_t sensorId, uint16_t dataId, uint32_t payload) {
 			if (data == sensorId && lastRx == START_STOP) {
 				_ss.stopListening();
 				_ss.setTX();
-				sendPayload(dataId, payload);
+				sendPayload(frameId, dataId, payload);
 				break;
 			}
 			lastRx = data;
@@ -139,7 +141,9 @@ void FrskySPort::sendByte(uint8_t byte) {
 
 }
 
+
 void FrskySPort::sendCrc() {
+
 	//Serial.println(0xFF - _crc, HEX);
 	_ss.write(0xFF - _crc);
 	// CRC reset
@@ -147,10 +151,10 @@ void FrskySPort::sendCrc() {
 
 }
 
-void FrskySPort::sendPayload(uint16_t dataId, int32_t payload) {
-	//Serial.print("SPort sending ");
-	//pinMode(_rxtx, OUTPUT);
-	sendByte(RESPONSE_FRAME_ID);
+void FrskySPort::sendPayload(uint8_t frameId, uint16_t dataId,
+		int32_t payload) {
+
+	sendByte(frameId);
 	uint8_t *bytes = (uint8_t*) &dataId;
 	sendByte(bytes[0]);
 	sendByte(bytes[1]);
@@ -162,6 +166,26 @@ void FrskySPort::sendPayload(uint16_t dataId, int32_t payload) {
 	sendByte(bytes[3]);
 
 	sendCrc();
-	//pinMode(_rxtx, INPUT);
+}
+
+void FrskySPort::sendLatLon(geodata_t* geoData) {
+
+	int32_t gpsLat = (geoData->latitude * 60.0) * 10000;
+
+	if (gpsLat < 0) {
+		gpsLat *= -1.0f;
+		gpsLat |= (FrskySPort::S << 30);
+	}
+
+	int32_t gpsLon = (uint32_t) ((geoData->longitude * 60.0) * 10000);
+
+	if (gpsLon < 0) {
+		gpsLon *= -1.0f;
+		gpsLon |= (FrskySPort::W << 30);
+	} else
+		gpsLon |= (FrskySPort::E << 30);
+
+	sendData(SENSOR_ID_GPS, FRSKY_FRAME_ID, DATA_ID_GPS_LONLAT, gpsLon);
+	sendData(SENSOR_ID_GPS, FRSKY_FRAME_ID, DATA_ID_GPS_LONLAT, gpsLat);
 
 }
