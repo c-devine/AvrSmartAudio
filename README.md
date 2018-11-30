@@ -2,6 +2,8 @@
 
 Controller firmware used to control a Smart Audio enabled VTX with the existing betaflight OpenTX lua scripts. The [Adafruit Trinket M0](https://www.adafruit.com/product/3500) is a small SAMD21 based development board with USB (easy programming), multiple GPIO pins, and a couple of leds. The Trinket is used to receive the S.Port telemetry, create read/write settings messages for the Smart Audio VTX, and return the results to the radio. This project was created to enable Smart Audio control on aircraft _without_ a flight controller board running something like betafight - but could be extended to control the other pins on the Trinket, or control some other device, or capture GPS... Tested soley with a Mach 2 VTX.
 
+Also now sends GPS data to OpenTX radio.
+
 ## Overview
 
 <img src="https://raw.githubusercontent.com/c-devine/AvrSmartAudio/snapshots/assets/img/overview.png?raw=true">
