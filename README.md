@@ -22,7 +22,7 @@ Smart Audio in action:
 * Update leds based on status (connected, disconnected, etc).
 
 ## Snapshots
-<img src="https://raw.githubusercontent.com/c-devine/AvrSmartAudio/snapshots/assets/img/radio-gps.jpg?raw=true" width="320" height="240">
+<img src="https://raw.githubusercontent.com/c-devine/AvrSmartAudio/snapshots/assets/img/radio-gps.png?raw=true" width="320" height="240">
 
 
 ## Hardware
