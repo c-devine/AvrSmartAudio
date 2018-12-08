@@ -26,9 +26,9 @@ Smart Audio in action:
 
 
 ## Hardware
+<img src="https://raw.githubusercontent.com/c-devine/AvrSmartAudio/snapshots/assets/img/wiring.png?raw=true" width="196" height="218">
 
-
-## Software 
+## Software
 Uses a hacked version of "SoftwareSerial".  Updated start/stop, intra-bit delays, and timings that worked on the SAMD21. Also changed the RX read strategy to use a Timer and timed pin reads, instead of delays - and removed the shared receive buffer.  The SAMD21HDUart should only listen to one RX at a time.
 
 
@@ -38,7 +38,7 @@ Uses a hacked version of "SoftwareSerial".  Updated start/stop, intra-bit delays
 
 
 ## Building and Installing
-Clone and build in eclipse. Use the "Upload Sketch" tool in Sloeber IDE, or possibly use the Arduino IDE (but the code setup probably needs to be re-arranged.) 
+Clone and build in eclipse. Use the "Upload Sketch" tool in Sloeber IDE, or possibly use the Arduino IDE (but the code setup probably needs to be re-arranged.)
 
 ## Built With
 
