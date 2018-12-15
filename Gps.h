@@ -26,11 +26,12 @@ public:
 
 private:
 
-	void parseMessage();
+	void parseMessage(char *msg);
 	double parseLatLon(float latlon, char dir);
 	void processGGA(char *buffer);
 	void processRMC(char *buffer);
 	void echo(const char *msg);
+	bool findStr(char *msg, const char *str[], uint8_t numItems);
 
 	Uart &_serial;
 	char _buffer[GPS_BUFFER_LEN];
@@ -40,6 +41,8 @@ private:
 	geodata_t _geodata = {0,0,0,0,0,0,0};
 	boolean _dataReady = false;
 	boolean _enabled = false;
+	const char *_rmc[2] = {"$GPRMC", "$GNRMC"};
+	const char *_gga[2] = {"$GPGGA", "$GNGGA"};
 };
 
 #endif /* GPS_H_ */
